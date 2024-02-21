@@ -22,8 +22,29 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
             } else if stage == 1 {
-                Text("hey")
-                    .transition(.opacity)
+                Text("Stage One - Transcription")
+                    .padding(5)
+                    .font(.title2)
+                
+                Text("DNA is found in the nucleus of a cell, but proteins are produced in the cytoplasm in the ribosome. DNA is too large to leave the nucleus and so must be transferred some other way.")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+            } else if stage == 2 {
+                Text("Stage One - Transcription")
+                    .padding(5)
+                    .font(.title2)
+                
+                Text("RNA polymerase, an enzyme, binds to the non coding region of DNA in front of a gene....")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+                Image("enzyme")
+                    .resizable()
+                    .scaledToFit()
+                
+            } else if stage == 3 {
+                
             }
             
             Button("Tap to continue") {
