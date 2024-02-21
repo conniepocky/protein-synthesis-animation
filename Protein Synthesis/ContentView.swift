@@ -68,17 +68,60 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
             } else if stage == 5 {
-                Text("The mRNA molecule now moves out of the nucleus and joins with a ribosome.")
+                Text("The mRNA molecule now moves out of the nucleus and joins with a ribosome in the cytoplasm.")
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     .padding(5)
+                
                 Image("ribosome")
                     .resizable()
                     .scaledToFit()
+                
+            } else if stage == 6 {
+                Text("Stage Two - Translation")
+                    .padding(5)
+                    .font(.title2)
+                
+                Text("The bases of mRNA are read in threes (triplets), and the corresponding amino acid is brought to the ribosome by tRNA. ")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+                Image("trna")
+                    .resizable()
+                    .scaledToFit()
+            } else if stage == 7 {
+                Text("Stage Two - Translation")
+                    .padding(5)
+                    .font(.title2)
+                
+                Text("The amino acids connect together to form a polypeptide.")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+                Image("chain")
+                    .resizable()
+                    .scaledToFit()
+                
+            } else if stage == 8 {
+                Text("Stage Two - Translation")
+                    .padding(5)
+                    .font(.title2)
+                
+                Text("When the chain of amino acids is complete, it folds to give the protein a specific shape, and hence a specific function.")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+            } else if stage == 9 {
+                Text("Thanks for watching :)")
+                    .font(.title)
             }
             
             Button("Tap to continue") {
-                stage += 1
+                if stage == 9 {
+                    stage = 0
+                } else {
+                    stage += 1
+                }
             }.fontWeight(.bold)
                 .padding()
             
