@@ -44,7 +44,37 @@ struct ContentView: View {
                     .scaledToFit()
                 
             } else if stage == 3 {
+                Text("Stage One - Transcription")
+                    .padding(5)
+                    .font(.title2)
                 
+                Text("...the two strands of DNA unzip and the RNA polymerase moves along one of the strands...")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+                Image("unzipped")
+                    .resizable()
+                    .scaledToFit()
+            } else if stage == 4 {
+                Text("Stage One - Transcription")
+                    .padding(5)
+                    .font(.title2)
+                
+                Text("...the RNA polymerase then uses the coding section of DNA (the gene) as a template to make mRNA. Base pairing between the DNA and RNA ensures that the mRNA is complementary to the gene. A-U, C-G.")
+                    .multilineTextAlignment(.center)
+                    .italic()
+                
+                Image("mrna")
+                    .resizable()
+                    .scaledToFit()
+            } else if stage == 5 {
+                Text("The mRNA molecule now moves out of the nucleus and joins with a ribosome.")
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .padding(5)
+                Image("ribosome")
+                    .resizable()
+                    .scaledToFit()
             }
             
             Button("Tap to continue") {
