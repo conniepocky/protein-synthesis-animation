@@ -11,6 +11,7 @@
 		BCE97A1D2B868BC1004ABC70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE97A1C2B868BC1004ABC70 /* ContentView.swift */; };
 		BCE97A1F2B868BC1004ABC70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE97A1E2B868BC1004ABC70 /* Assets.xcassets */; };
 		BCE97A222B868BC1004ABC70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE97A212B868BC1004ABC70 /* Preview Assets.xcassets */; };
+		BCE97A2A2B87527B004ABC70 /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = BCE97A292B87527B004ABC70 /* EffectsLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE97A2A2B87527B004ABC70 /* EffectsLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "Protein Synthesis";
+			packageProductDependencies = (
+				BCE97A292B87527B004ABC70 /* EffectsLibrary */,
+			);
 			productName = "Protein Synthesis";
 			productReference = BCE97A172B868BC1004ABC70 /* Protein Synthesis.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = BCE97A0E2B868BC1004ABC70;
+			packageReferences = (
+				BCE97A282B87527B004ABC70 /* XCRemoteSwiftPackageReference "effects-library" */,
+			);
 			productRefGroup = BCE97A182B868BC1004ABC70 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCE97A282B87527B004ABC70 /* XCRemoteSwiftPackageReference "effects-library" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GetStream/effects-library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCE97A292B87527B004ABC70 /* EffectsLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCE97A282B87527B004ABC70 /* XCRemoteSwiftPackageReference "effects-library" */;
+			productName = EffectsLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BCE97A0F2B868BC1004ABC70 /* Project object */;
 }

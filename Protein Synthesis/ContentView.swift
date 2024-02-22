@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import EffectsLibrary
 
 struct ContentView: View {
+    
     @State var stage = 0
+    
     var body: some View {
         VStack {
             if stage == 0 {
@@ -113,7 +116,12 @@ struct ContentView: View {
                 
             } else if stage == 9 {
                 Text("Thanks for watching :)")
+                    .padding(40)
                     .font(.title)
+                    .overlay(
+                        FireworksView()
+                    )
+            
             }
             
             Button("Tap to continue") {
