@@ -12,6 +12,10 @@ struct ContentView: View {
     
     @State var stage = 0
     
+    var config = FireworksConfig(
+        initialVelocity: .slow
+    )
+    
     var body: some View {
         VStack {
             if stage == 0 {
@@ -19,7 +23,7 @@ struct ContentView: View {
                     .padding(5)
                     .font(.title3)
                 
-                Text("A section of DNA that codes for a particular protein is called a gene. Each amino acid is coded for by a sequence of three bases in a gene")
+                Text("A section of DNA that codes for a particular protein is called a gene. Each amino acid is coded for by a sequence of three bases in a gene.")
                     .multilineTextAlignment(.center)
                     .italic()
                 
@@ -28,10 +32,6 @@ struct ContentView: View {
                     .scaledToFit()
                 
             } else if stage == 1 {
-                Text("Stage One - Transcription")
-                    .padding(5)
-                    .font(.title2)
-                
                 Text("DNA is found in the nucleus of a cell, but proteins are produced in the cytoplasm in the ribosome. DNA is too large to leave the nucleus and so must be transferred some other way.")
                     .multilineTextAlignment(.center)
                     .italic()
@@ -54,7 +54,7 @@ struct ContentView: View {
                     .padding(5)
                     .font(.title2)
                 
-                Text("...the two strands of DNA unzip and the RNA polymerase moves along one of the strands...")
+                Text("...so the two strands of DNA unzip, and the RNA polymerase moves along one of the strands...")
                     .multilineTextAlignment(.center)
                     .italic()
                 
@@ -75,7 +75,6 @@ struct ContentView: View {
                     .scaledToFit()
             } else if stage == 5 {
                 Text("The mRNA molecule now moves out of the nucleus and joins with a ribosome in the cytoplasm.")
-                    .font(.title2)
                     .multilineTextAlignment(.center)
                     .padding(5)
                 
@@ -88,7 +87,7 @@ struct ContentView: View {
                     .padding(5)
                     .font(.title2)
                 
-                Text("The bases of mRNA are read in threes (triplets), and the corresponding amino acid is brought to the ribosome by tRNA. ")
+                Text("The bases of mRNA are read in threes (known as a codon), and the corresponding amino acid is brought to the ribosome by tRNA. ")
                     .multilineTextAlignment(.center)
                     .italic()
                 
@@ -137,7 +136,7 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.black)
         .animation(Animation.easeInOut(duration: 1).delay(0.5))
-        .overlay(stage == 9 ? FireworksView().allowsHitTesting(false): nil)
+        .overlay(stage == 9 ? FireworksView(config: config).allowsHitTesting(false): nil)
     }
 }
 
