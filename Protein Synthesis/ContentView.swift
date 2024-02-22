@@ -10,7 +10,7 @@ import EffectsLibrary
 
 struct ContentView: View {
     
-    @State var stage = 9
+    @State var stage = 0
     
     var body: some View {
         VStack {
@@ -18,12 +18,15 @@ struct ContentView: View {
                 Text("Proteins are made from amino acids.")
                     .padding(5)
                     .font(.title3)
+                
                 Text("A section of DNA that codes for a particular protein is called a gene. Each amino acid is coded for by a sequence of three bases in a gene")
                     .multilineTextAlignment(.center)
                     .italic()
+                
                 Image("dna")
                     .resizable()
                     .scaledToFit()
+                
             } else if stage == 1 {
                 Text("Stage One - Transcription")
                     .padding(5)
