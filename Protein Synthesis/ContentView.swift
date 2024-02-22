@@ -10,7 +10,7 @@ import EffectsLibrary
 
 struct ContentView: View {
     
-    @State var stage = 0
+    @State var stage = 9
     
     var body: some View {
         VStack {
@@ -118,10 +118,6 @@ struct ContentView: View {
                 Text("Thanks for watching :)")
                     .padding(40)
                     .font(.title)
-                    .overlay(
-                        FireworksView()
-                    )
-            
             }
             
             Button("Tap to continue") {
@@ -138,6 +134,7 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.black)
         .animation(Animation.easeInOut(duration: 1).delay(0.5))
+        .overlay(stage == 9 ? FireworksView().allowsHitTesting(false): nil)
     }
 }
 
